@@ -102,6 +102,9 @@ pub struct Options<'a> {
     /// Specifies whether to convert text nodes to paths. If true, will skip text
     /// layout and rendering during parsing and ignores fonts. It mirrors
     /// `preserve_text` in `usvg::writer::Options`.
+    ///
+    /// Warning: This may cause rendering issues with elements that depend on proper text
+    /// layout, such as those using `objectBoundingBox` units.
     pub preserve_text: bool,
 }
 
